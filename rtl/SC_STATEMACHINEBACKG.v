@@ -21,9 +21,10 @@
 module SC_STATEMACHINEBACKG (
 	//////////// OUTPUTS //////////
 	SC_STATEMACHINEBACKG_clear_OutLow,
+	//SC_STATEMACHINEBACKG_load_OutLow, // Esta se quito**
 	SC_STATEMACHINEBACKG_shiftselection_Out,
-	SC_STATEMACHINEBACKG_upcount_out,
-	SC_STATEMACHINEBACKG_upcount2_out,
+	SC_STATEMACHINEBACKG_upcount_out,				//low
+	SC_STATEMACHINEBACKG_upcount2_out,				// low
 	SC_STATEMACHINEBACKG_loadLastRegister_OutLow,
 	
 	//////////// INPUTS //////////
@@ -40,14 +41,24 @@ module SC_STATEMACHINEBACKG (
 localparam STATE_RESET_0									= 0;
 localparam STATE_START_0									= 1;
 localparam STATE_CHECK_0									= 2;
+
+
 localparam STATE_INIT_0										= 3;
-localparam STATE_SHIFT_0									= 4;
-localparam STATE_COUNT_0									= 5;
 localparam STATE_CHECK_1									= 6;
+
+localparam STATE_CHECK_01									= 9;
+localparam STATE_SHIFT										= 4;
+localparam STATE_COUNT_0									= 5;
+
+localparam STATE_CHECK_02									= 10;
+localparam STATE_DISPLAY									= 7;
+localparam STATE_COUNT_1									= 8;
+
 //=======================================================
 //  PORT declarations
 //=======================================================
 output reg		SC_STATEMACHINEBACKG_clear_OutLow;
+output reg		SC_STATEMACHINEBACKG_load_OutLow;
 output reg		[1:0] SC_STATEMACHINEBACKG_shiftselection_Out;
 output reg 		SC_STATEMACHINEBACKG_upcount_out;
 output reg 		SC_STATEMACHINEBACKG_upcount2_out;
@@ -73,14 +84,30 @@ begin
 	case (STATE_Register)
 		STATE_RESET_0: STATE_Signal = STATE_START_0;
 		STATE_START_0: STATE_Signal = STATE_CHECK_0;
+		// SELECTOR INICIAL
 		STATE_CHECK_0: if (SC_STATEMACHINEBACKG_startButton_InLow == 1'b0) STATE_Signal = STATE_INIT_0;
-						else if (SC_STATEMACHINEBACKG_T0_InLow == 1'b0) STATE_Signal = STATE_SHIFT_0;
+						else if (SC_STATEMACHINEBACKG_T0_InLow == 1'b0) STATE_Signal = STATE_SHIFT;
+						else if (SC_STATEMACHINEBACKG_T1_InLow == 1'b0) STATE_Signal = STATE_DISPLAY;
 						else STATE_Signal = STATE_COUNT_0;
+		
+		// Carga inicial
 		STATE_INIT_0:	STATE_Signal = STATE_CHECK_1;
-		STATE_SHIFT_0: 	STATE_Signal = STATE_COUNT_0;
-		STATE_COUNT_0: 	STATE_Signal = STATE_CHECK_0;		
 		STATE_CHECK_1: if (SC_STATEMACHINEBACKG_startButton_InLow == 1'b0) STATE_Signal = STATE_CHECK_1;
-						else STATE_Signal = STATE_CHECK_0;
+							 else STATE_Signal = STATE_CHECK_0;
+		// Display
+		STATE_DISPLAY:	STATE_Signal = STATE_COUNT_1;
+		STATE_COUNT_1:	STATE_Signal = STATE_CHECK_02;
+		STATE_CHECK_02:if (SC_STATEMACHINEBACKG_T1_InLow == 1'b0) STATE_Signal = STATE_DISPLAY;
+							 else if (SC_STATEMACHINEBACKG_T0_InLow == 1'b0) STATE_Signal = STATE_SHIFT;
+							 else STATE_Signal = STATE_COUNT_1;
+		// Shift
+		STATE_SHIFT: 	STATE_Signal = STATE_COUNT_0;
+		STATE_COUNT_0: STATE_Signal = STATE_CHECK_01;
+		STATE_CHECK_01:if (SC_STATEMACHINEBACKG_T1_InLow == 1'b0) STATE_Signal = STATE_DISPLAY;
+							 else if (SC_STATEMACHINEBACKG_T0_InLow == 1'b0) STATE_Signal = STATE_SHIFT;
+							 else STATE_Signal = STATE_COUNT_0;
+		
+		
 
 		default : 		STATE_Signal = STATE_CHECK_0;
 	endcase
@@ -108,6 +135,7 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b0;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 //=========================================================
@@ -118,6 +146,7 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 //=========================================================
@@ -128,16 +157,41 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
+		end
+
+//=========================================================
+// STATE_CHECK01
+//=========================================================
+	STATE_CHECK_01 :
+		begin
+			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 //=========================================================
-// STATE_CHECK
+// STATE_CHECK02
+//=========================================================
+	STATE_CHECK_02 :
+		begin
+			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
+		end
+//=========================================================
+// STATE_CHECK1
 //=========================================================
 	STATE_CHECK_1 :
 		begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;			
 		end
 //=========================================================
@@ -148,16 +202,18 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b0;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 //=========================================================
 // STATE_SHIFT
 //=========================================================
-	STATE_SHIFT_0 :
+	STATE_SHIFT :
 		begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
-			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b10; 
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b10; // CAMBIAR ESTE VALOR PARA CAMBIAR SENTIDO
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 //=========================================================
@@ -168,10 +224,33 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11;  
 			SC_STATEMACHINEBACKG_upcount_out = 1'b0;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
+		end
+//=========================================================
+// STATE_DISPLAY
+//=========================================================
+	STATE_DISPLAY :
+		begin
+			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
 			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 		
-
+//=========================================================
+// STATE_COUNT_1
+//=========================================================
+	STATE_COUNT_0 :	
+		begin
+			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11;  
+			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b0;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
+		end
+		
 //=========================================================
 // DEFAULT
 //=========================================================
@@ -180,6 +259,8 @@ begin
 			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
 			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11;  
 			SC_STATEMACHINEBACKG_upcount_out = 1'b1;
+			SC_STATEMACHINEBACKG_upcount2_out = 1'b1;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b1;
 		end
 	endcase
 end
