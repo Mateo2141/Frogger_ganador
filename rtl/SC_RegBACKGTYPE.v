@@ -61,6 +61,7 @@ input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data2_InBUS;
 //=======================================================
 reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Register;
 reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Signal;
+reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Nivel;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -70,7 +71,7 @@ begin
 	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
 		RegBACKGTYPE_Signal = DATA_FIXED_nivel_1_INITREGBACKG;
 	else if (SC_RegBACKGTYPE_load_InLow == 1'b0)
-		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data_InBUS;
+		RegBACKGTYPE_Signal = RegBACKGTYPE_Nivel;
 	else if (SC_RegBACKGTYPE_load2_InBUS == 1'b0)
 		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data2_InBUS;
 	else if (SC_RegBACKGTYPE_shiftselection_In == 2'b01)
@@ -82,13 +83,13 @@ begin
 	end	
 
 	if (SC_RegBACKGTYPE_transition_selector == 2'b00)
-		RegBACKGTYPE_Signal == DATA_FIXED_nivel_1_INITREGBACKG;
+		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_1_INITREGBACKG;
 	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
-		RegBACKGTYPE_Signal == DATA_FIXED_nivel_2_INITREGBACKG;
+		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_2_INITREGBACKG;
 	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
-		RegBACKGTYPE_Signal == DATA_FIXED_nivel_3_INITREGBACKG;
+		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_3_INITREGBACKG;
 	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
-		RegBACKGTYPE_Signal == DATA_FIXED_nivel_4_INITREGBACKG;
+		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_4_INITREGBACKG;
 
 //STATE REGISTER: SEQUENTIAL
 always @(posedge SC_RegBACKGTYPE_CLOCK_50, posedge SC_RegBACKGTYPE_RESET_InHigh)
