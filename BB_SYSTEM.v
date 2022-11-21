@@ -608,6 +608,11 @@ CC_COMPARATOR_LEVELS #(.LEVELS_DATAWIDTH(LEVELS_DATAWIDTH)) CC_COMPARATOR_LEVELS
 	.CC_COMPARATOR_LEVELS_señal_InLow(SC_COUNTER_LEVELS_wire)
 );
 
+SC_STATEMACHINEGENERAL SC_STATEMACHINEGENERAL_A (
+// port map - connection between master ports and signals/registers   
+
+);
+
 //######################################################################
 //#	TO LED MATRIZ: VISUALIZATION
 //######################################################################
