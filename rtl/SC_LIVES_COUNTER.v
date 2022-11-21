@@ -3,7 +3,7 @@
 //=======================================================
 module SC_LIVES_COUNTER #(parameter LIVES_COUNTER_DATAWIDTH=3)(
 	//////////// OUTPUTS //////////
-	SC_LIVES_COUNTER_señal_OutLow,
+	SC_LIVES_COUNTER_senal_OutLow,
 	//////////// INPUTS //////////
 	SC_LIVES_COUNTER_CLOCK_50,
 	SC_LIVES_COUNTER_RESET_InHigh,
@@ -16,7 +16,7 @@ module SC_LIVES_COUNTER #(parameter LIVES_COUNTER_DATAWIDTH=3)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[LIVES_COUNTER_DATAWIDTH-1:0]	SC_LIVES_COUNTER_señal_OutLow;
+output		[LIVES_COUNTER_DATAWIDTH-1:0]	SC_LIVES_COUNTER_senal_OutLow;
 input		SC_LIVES_COUNTER_CLOCK_50;
 input		SC_LIVES_COUNTER_RESET_InHigh;
 input		SC_LIVES_COUNTER_upcount_InLow;	
@@ -49,6 +49,6 @@ end
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
-assign SC_LIVES_COUNTER_señal_OutLow = SC_LIVES_COUNTER_Register;
+assign SC_LIVES_COUNTER_senal_OutLow = SC_LIVES_COUNTER_Register;
 
 endmodule

@@ -1,10 +1,10 @@
 module SC_COUNTER_LEVELS #(parameter COUNTER_LEVELS_DATAWIDTH =8)(
 	//////////// OUTPUTS //////////
-	SC_COUNTER_LEVELS_señal_OutLow,
+	SC_COUNTER_LEVELS_senal_OutLow,
 	//////////// INPUTS //////////
 	SC_COUNTER_LEVELS_CLOCK_50,
 	SC_COUNTER_LEVELS_RESET_InHigh,
-	SC_COUNTER_LEVELS_señal_InLow
+	SC_COUNTER_LEVELS_senal_InLow
 );
 //=======================================================
 //  PARAMETER declarations
@@ -13,10 +13,10 @@ module SC_COUNTER_LEVELS #(parameter COUNTER_LEVELS_DATAWIDTH =8)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[COUNTER_LEVELS_DATAWIDTH-1:0]	SC_COUNTER_LEVELS_señal_OutLow;
+output		[COUNTER_LEVELS_DATAWIDTH-1:0]	SC_COUNTER_LEVELS_senal_OutLow;
 input		SC_COUNTER_LEVELS_CLOCK_50;
 input		SC_COUNTER_LEVELS_RESET_InHigh;
-input		SC_COUNTER_LEVELS_señal_InLow;	
+input		SC_COUNTER_LEVELS_senal_InLow;	
 
 //=======================================================
 //  REG/WIRE declarations
@@ -29,7 +29,7 @@ reg [COUNTER_LEVELS_DATAWIDTH-1:0]  COUNTER_LEVELS_Signal;
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_COUNTER_LEVELS_señal_InLow == 1'b0)
+	if (SC_COUNTER_LEVELS_senal_InLow == 1'b0)
 		COUNTER_LEVELS_Signal = COUNTER_LEVELS_Register + 1'b1;
 	else
 		COUNTER_LEVELS_Signal = COUNTER_LEVELS_Register;
@@ -46,6 +46,6 @@ end
 //  Outputs
 //=======================================================
 //OUTPUT LOGIC: COMBINATIONAL
-assign SC_COUNTER_LEVELS_señal_OutLow = COUNTER_LEVELS_Register;
+assign SC_COUNTER_LEVELS_senal_OutLow = COUNTER_LEVELS_Register;
 
 endmodule
