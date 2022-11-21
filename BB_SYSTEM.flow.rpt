@@ -1,5 +1,5 @@
 Flow report for BB_SYSTEM
-Mon Nov 21 11:37:53 2022
+Mon Nov 21 11:51:44 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Flow Failed - Mon Nov 21 11:37:53 2022      ;
+; Flow Status                        ; Successful - Mon Nov 21 11:51:44 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 598 / 22,320 ( 3 % )                        ;
+;     Total combinational functions  ; 593 / 22,320 ( 3 % )                        ;
+;     Dedicated logic registers      ; 254 / 22,320 ( 1 % )                        ;
+; Total registers                    ; 254                                         ;
+; Total pins                         ; 30 / 154 ( 19 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/21/2022 11:37:46 ;
+; Start date & time ; 11/21/2022 11:51:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BB_SYSTEM           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 9254666005087.166904866638612          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 9254666005087.166904946742084          ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; TB_SYSTEM      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; TB_SYSTEM                              ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR        ; simulation/modelsim                    ; --            ; --          ; eda_simulation ;
@@ -103,8 +103,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4699 MB             ; 00:00:06                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4777 MB             ; 00:00:10                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 5544 MB             ; 00:00:03                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4796 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4658 MB             ; 00:00:00                           ;
+; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:14                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,6 +118,10 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; LAPTOP-B075BFFC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LAPTOP-B075BFFC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LAPTOP-B075BFFC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LAPTOP-B075BFFC  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; LAPTOP-B075BFFC  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -121,6 +129,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+quartus_fit --read_settings_files=off --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+quartus_asm --read_settings_files=off --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+quartus_sta BB_SYSTEM -c BB_SYSTEM
+quartus_eda --read_settings_files=off --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 
 
 
