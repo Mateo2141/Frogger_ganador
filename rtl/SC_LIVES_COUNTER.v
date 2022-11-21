@@ -33,7 +33,7 @@ reg [LIVES_COUNTER_DATAWIDTH-1:0] SC_LIVES_COUNTER_Signal;
 always @(*)
 begin
 	if (SC_LIVES_COUNTER_upcount_InLow == 1'b0)
-		SC_LIVES_COUNTER_Signal = SC_LIVES_COUNTER_Register + 1'b1;
+		SC_LIVES_COUNTER_Signal = SC_LIVES_COUNTER_Register - 1'b1;
 	else
 		SC_LIVES_COUNTER_Signal = SC_LIVES_COUNTER_Register;
 	end	
