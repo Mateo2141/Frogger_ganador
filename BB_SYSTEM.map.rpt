@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Mon Nov 21 11:35:38 2022
+Mon Nov 21 11:37:53 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Nov 21 11:35:38 2022           ;
+; Analysis & Synthesis Status        ; Failed - Mon Nov 21 11:37:53 2022           ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -164,7 +164,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 21 11:35:30 2022
+    Info: Processing started: Mon Nov 21 11:37:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinebackg.v
@@ -204,7 +204,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_counter_levels.v
     Info (12023): Found entity 1: SC_COUNTER_LEVELS File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_COUNTER_LEVELS.v Line: 1
 Error (10170): Verilog HDL syntax error at SC.STATEMACHINEGENERAL.v(69) near text: "default";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC.STATEMACHINEGENERAL.v Line: 69
-Error (10112): Ignored design unit "SC_STATEMACHINEGENERAL" at SC.STATEMACHINEGENERAL.v(7) due to previous errors File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC.STATEMACHINEGENERAL.v Line: 7
+Error (10112): Ignored design unit "SC_STATEMACHINEGENERAL" at SC.STATEMACHINEGENERAL.v(11) due to previous errors File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC.STATEMACHINEGENERAL.v Line: 11
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/sc.statemachinegeneral.v
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_comparator_lives.v
     Info (12023): Found entity 1: CC_COMPARATOR_LIVES File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/CC_COMPARATOR_LIVES.v Line: 4
@@ -212,9 +212,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_
     Info (12023): Found entity 1: CC_COMPARATOR_LEVELS File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/CC_COMPARATOR_LEVELS.v Line: 4
 Info (144001): Generated suppressed messages file C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.map.smsg
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
-    Error: Peak virtual memory: 4707 megabytes
-    Error: Processing ended: Mon Nov 21 11:35:38 2022
-    Error: Elapsed time: 00:00:08
+    Error: Peak virtual memory: 4699 megabytes
+    Error: Processing ended: Mon Nov 21 11:37:53 2022
+    Error: Elapsed time: 00:00:07
     Error: Total CPU time (on all processors): 00:00:06
 
 

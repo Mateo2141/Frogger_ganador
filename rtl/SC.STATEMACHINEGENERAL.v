@@ -65,7 +65,7 @@ begin
 						else if (SC_STATEMACHINEGENERAL_Losing_InLow == 1'b0)	STATE_Signal = STATE_MENOS_UNA_VIDA;
 						else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b00) STATE_Signal = STATE_SUME_UNA_VIDA;
 						else 
-							STATE_Signal = STATE_START_0
+							STATE_Signal = STATE_START_0;
 		default : 	STATE_Signal = STATE_START_0;
 	endcase
 end
