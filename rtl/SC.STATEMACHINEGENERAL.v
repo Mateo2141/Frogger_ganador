@@ -1,6 +1,10 @@
 //=======================================================================================================================================
 //  														MAQUINA DE ESTADOS GENERAL
 //=======================================================================================================================================
+/////STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
+///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
+///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
+///
 //=======================================================
 //  MODULE Definition
 //=======================================================
@@ -62,10 +66,6 @@ begin
 						else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b00) STATE_Signal = STATE_SUME_UNA_VIDA;
 						else 
 							STATE_Signal = STATE_START_0
-///STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
-///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
-///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
-///
 		default : 	STATE_Signal = STATE_START_0;
 	endcase
 end
