@@ -21,7 +21,7 @@
 module SC_STATEMACHINEBACKG (
 	//////////// OUTPUTS //////////
 	SC_STATEMACHINEBACKG_clear_OutLow,
-	//SC_STATEMACHINEBACKG_load_OutLow,
+	SC_STATEMACHINEBACKG_load_OutLow,
 	SC_STATEMACHINEBACKG_shiftselection_Out,
 	SC_STATEMACHINEBACKG_upcount_out,				//low
 	SC_STATEMACHINEBACKG_upcount2_out,				// low

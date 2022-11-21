@@ -22,7 +22,9 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8,
 						parameter DATA_FIXED_nivel_1_INITREGBACKG =8'b00000000,
 						parameter DATA_FIXED_nivel_2_INITREGBACKG =8'b00000000,
 						parameter DATA_FIXED_nivel_3_INITREGBACKG =8'b00000000,
-						parameter DATA_FIXED_nivel_4_INITREGBACKG =8'b00000000
+						parameter DATA_FIXED_nivel_4_INITREGBACKG =8'b00000000,
+						parameter DATA_FIXED_LOSEREGBACKG = 8'b00000001,
+						parameter DATA_FIXED_WONREGBACKG = 8'b00000001
 						)(
 	//////////// OUTPUTS //////////
 	SC_RegBACKGTYPE_data_OutBUS,
@@ -35,7 +37,8 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8,
 	SC_RegBACKGTYPE_data_InBUS,
 	SC_RegBACKGTYPE_transition_selector,
 	SC_RegBACKGTYPE_load2_InBUS,
-	SC_RegBACKGTYPE_data2_InBUS
+	SC_RegBACKGTYPE_data2_InBUS,
+	SC_RegBACKGTYPE_DisplayResultado_InBUS
 	
 );
 //=======================================================
@@ -51,6 +54,7 @@ input		SC_RegBACKGTYPE_RESET_InHigh;
 input		SC_RegBACKGTYPE_clear_InLow;
 input		SC_RegBACKGTYPE_load_InLow;
 input    SC_RegBACKGTYPE_load2_InBUS;
+input    SC_RegBACKGTYPE_DisplayResultado_InBUS;
 input 		SC_RegBACKGTYPE_transition_selector;
 input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
 input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
