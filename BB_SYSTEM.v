@@ -205,7 +205,7 @@ wire STATEMACHINEBACKG_clear_cwire;
 wire STATEMACHINEBACKG_load_cwire;
 wire [1:0] STATEMACHINEBACKG_shiftselection_cwire;
 wire STATEMACHINEBACKG_upcount_cwire;
-wire STATEMACHINEPOINT_LosingComparator_wire;
+wire STATEMACHINEGENERAL_LosingComparator_wire;
 wire [1:0]Last_register_comparator_OutBus_wire;
 wire loadLastRegister_OutLow_wire;
 wire SC_COUNTER_LEVELS_wire:
@@ -396,9 +396,7 @@ SC_STATEMACHINEPOINT SC_STATEMACHINEPOINT_u0 (
 	.SC_STATEMACHINEPOINT_downButton_InLow(BB_SYSTEM_downButton_InLow_cwire), 
 	.SC_STATEMACHINEPOINT_leftButton_InLow(BB_SYSTEM_leftButton_InLow_cwire), 
 	.SC_STATEMACHINEPOINT_rightButton_InLow(BB_SYSTEM_rightButton_InLow_cwire), 
-	.SC_STATEMACHINEPOINT_Losing_InLow(STATEMACHINEPOINT_LosingComparator_wire),
 	.SC_STATEMACHINEPOINT_bottomsidecomparator_InLow(BOTTOMSIDECOMPARATOR_2_STATEMACHINEBACKG_bottomside_cwire),
-	.SC_STATEMACHINEPOINT_LastRegisterComparator_InLow(Last_register_comparator_OutBus_wire)
 );
 
 //######################################################################
@@ -571,7 +569,7 @@ CC_SPEEDCOMPARATOR #(.SPEEDCOMPARATOR_DATAWIDTH(PRESCALER_DATAWIDTH)) CC_SPEEDCO
 //######################################################################
 
 CC_MATRIXCOMPARATOR #(.MATRIXCOMPARATOR_DATAWIDTH(DATAWIDTH_BUS))CC_MATRIXCOMPARATOR_u0(
-	 .CC_MATRIXCOMPARATOR_crash_OutLow(STATEMACHINEPOINT_LosingComparator_wire),
+	 .CC_MATRIXCOMPARATOR_crash_OutLow(STATEMACHINEGENERAL_LosingComparator_wire),
 	 .CC_MATRIXCOMPARATOR_registro7_InBUS(regOVER_data0_wire),
     .CC_MATRIXCOMPARATOR_registro6_InBUS(regOVER_data1_wire),
     .CC_MATRIXCOMPARATOR_registro5_InBUS(regOVER_data2_wire),

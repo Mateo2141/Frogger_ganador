@@ -32,8 +32,6 @@ module SC_STATEMACHINEPOINT (
 	SC_STATEMACHINEPOINT_downButton_InLow,
 	SC_STATEMACHINEPOINT_leftButton_InLow,
 	SC_STATEMACHINEPOINT_rightButton_InLow,
-	SC_STATEMACHINEPOINT_Losing_InLow,
-	SC_STATEMACHINEPOINT_LastRegisterComparator_InLow,
 	SC_STATEMACHINEPOINT_bottomsidecomparator_InLow
 );	
 //=======================================================
@@ -64,8 +62,6 @@ input			SC_STATEMACHINEPOINT_downButton_InLow;
 input			SC_STATEMACHINEPOINT_leftButton_InLow;
 input			SC_STATEMACHINEPOINT_rightButton_InLow;
 input			SC_STATEMACHINEPOINT_bottomsidecomparator_InLow;
-input 		SC_STATEMACHINEPOINT_Losing_InLow;
-input			[1:0]SC_STATEMACHINEPOINT_LastRegisterComparator_InLow;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -86,7 +82,6 @@ begin
 						else if (SC_STATEMACHINEPOINT_downButton_InLow == 1'b0 & (SC_STATEMACHINEPOINT_bottomsidecomparator_InLow == 1'b1)) STATE_Signal = STATE_DOWN_0;
 						else if (SC_STATEMACHINEPOINT_leftButton_InLow == 1'b0) STATE_Signal = STATE_LEFT_0;
 						else if (SC_STATEMACHINEPOINT_rightButton_InLow == 1'b0) STATE_Signal = STATE_RIGHT_0;
-						else if (SC_STATEMACHINEPOINT_Losing_InLow  == 1'b0 | SC_STATEMACHINEPOINT_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_RESET_0;
 						else STATE_Signal = STATE_CHECK_0;
 		STATE_INIT_0: 	STATE_Signal = STATE_CHECK_1;
 		STATE_UP_0: 	STATE_Signal = STATE_CHECK_1;

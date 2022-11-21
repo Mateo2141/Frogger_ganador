@@ -62,6 +62,7 @@ begin
 		end
 						
 
+else if (SC_STATEMACHINEPOINT_Losing_InLow  == 1'b0 | SC_STATEMACHINEPOINT_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_RESET_0;
 
 
 		default : 		STATE_Signal = STATE_START_0;
