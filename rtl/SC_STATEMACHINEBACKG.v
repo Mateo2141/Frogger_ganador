@@ -24,13 +24,15 @@ module SC_STATEMACHINEBACKG (
 	SC_STATEMACHINEBACKG_load_OutLow,
 	SC_STATEMACHINEBACKG_shiftselection_Out,
 	SC_STATEMACHINEBACKG_upcount_out,
+	SC_STATEMACHINEBACKG_upcount2_out,
 	SC_STATEMACHINEBACKG_loadLastRegister_OutLow,
 	
 	//////////// INPUTS //////////
 	SC_STATEMACHINEBACKG_CLOCK_50,
 	SC_STATEMACHINEBACKG_RESET_InHigh,
 	SC_STATEMACHINEBACKG_startButton_InLow,
-	SC_STATEMACHINEBACKG_T0_InLow
+	SC_STATEMACHINEBACKG_T0_InLow,
+	SC_STATEMACHINEBACKG_T1_InLow
 );	
 //=======================================================
 //  PARAMETER declarations
@@ -50,11 +52,14 @@ output reg		SC_STATEMACHINEBACKG_clear_OutLow;
 output reg		SC_STATEMACHINEBACKG_load_OutLow;
 output reg		[1:0] SC_STATEMACHINEBACKG_shiftselection_Out;
 output reg 		SC_STATEMACHINEBACKG_upcount_out;
+output reg 		SC_STATEMACHINEBACKG_upcount2_out;
 output reg 		SC_STATEMACHINEBACKG_loadLastRegister_OutLow;
 input			SC_STATEMACHINEBACKG_CLOCK_50;
 input 			SC_STATEMACHINEBACKG_RESET_InHigh;
 input			SC_STATEMACHINEBACKG_startButton_InLow;
 input			SC_STATEMACHINEBACKG_T0_InLow;
+input			SC_STATEMACHINEBACKG_T1_InLow;
+	
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
