@@ -4,7 +4,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_STATEMACHINEGENERAL (
+module SC_STATEMACHINEGENERAL(
 	//////////// OUTPUTS //////////
 	SC_STATEMACHINEGENERAL_contador_niveles_OutLow,
 	SC_STATEMACHINEGENERAL_contador_vidas_OutLow,
@@ -23,7 +23,6 @@ module SC_STATEMACHINEGENERAL (
 // states declaration
 localparam STATE_RESET_0									= 0;
 localparam STATE_START_0									= 1;
-localparam 
 
 //=======================================================
 //  PORT declarations
@@ -52,15 +51,15 @@ begin
 	case (STATE_Register)
 		STATE_RESET_0: STATE_Signal = STATE_START_0;
 		STATE_START_0: STATE_Signal = STATE_CHECK;
-		STATE_CHECK_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LIVES == 1'b0) STATE_Signal = STATE_CONTINUA_1
+		STATE_CHECK_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LIVES == 1'b0) STATE_Signal = STATE_CONTINUA_1;
 					else
-						STATE_Signal= STATE_PIERDE
-		STATE_CONTINUA_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS == 1'b'0)STATE_Signal = STATE_GANO
+						STATE_Signal= STATE_PIERDE;
+		STATE_CONTINUA_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS == 1'b0)STATE_Signal = STATE_GANO;
 						else
-						STATE_Signal = STATE_CONTINUA
-		if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
-		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
-		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0
+						STATE_Signal = STATE_CONTINUA;
+		STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
+							else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
+							else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
 
 		default : 	STATE_Signal = STATE_START_0;
 	endcase
