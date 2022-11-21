@@ -22,7 +22,7 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8,
 						parameter DATA_FIXED_nivel_1_INITREGBACKG =8'b00000000,
 						parameter DATA_FIXED_nivel_2_INITREGBACKG =8'b00000000,
 						parameter DATA_FIXED_nivel_3_INITREGBACKG =8'b00000000,
-						parameter DATA_FIXED_nivel_4_INITREGBACKG =8'b00000000,
+						parameter DATA_FIXED_nivel_4_INITREGBACKG =8'b00000000
 						)(
 	//////////// OUTPUTS //////////
 	SC_RegBACKGTYPE_data_OutBUS,
@@ -34,7 +34,8 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8,
 	SC_RegBACKGTYPE_shiftselection_In,
 	SC_RegBACKGTYPE_data_InBUS,
 	SC_RegBACKGTYPE_transition_selector,
-	SC_RegBACKGTYPE_load2_InBUS
+	SC_RegBACKGTYPE_load2_InBUS,
+	SC_RegBACKGTYPE_data2_InBUS
 	
 );
 //=======================================================
@@ -67,6 +68,19 @@ reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Nivel;
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 always @(*)
+
+begin
+	if (SC_RegBACKGTYPE_transition_selector == 2'b00)
+		RegBACKGTYPE_Nivel = DATA_FIXED_nivel_1_INITREGBACKG;
+	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
+		RegBACKGTYPE_Nivel = DATA_FIXED_nivel_2_INITREGBACKG;
+	else if (SC_RegBACKGTYPE_transition_selector == 2'b10)
+		RegBACKGTYPE_Nivel = DATA_FIXED_nivel_3_INITREGBACKG;
+	else if (SC_RegBACKGTYPE_transition_selector == 2'b11)
+		RegBACKGTYPE_Nivel = DATA_FIXED_nivel_4_INITREGBACKG;
+end
+	
+always @(*)
 begin
 	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
 		RegBACKGTYPE_Signal = DATA_FIXED_nivel_1_INITREGBACKG;
@@ -80,17 +94,7 @@ begin
 		RegBACKGTYPE_Signal = {RegBACKGTYPE_Register[0],RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-1:1]};
 	else
 		RegBACKGTYPE_Signal = RegBACKGTYPE_Register;
-	end	
-
-	if (SC_RegBACKGTYPE_transition_selector == 2'b00)
-		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_1_INITREGBACKG;
-	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
-		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_2_INITREGBACKG;
-	else if (SC_RegBACKGTYPE_transition_selector == 2'b10)
-		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_3_INITREGBACKG;
-	else if (SC_RegBACKGTYPE_transition_selector == 2'b11)
-		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_4_INITREGBACKG;
-
+end	
 //STATE REGISTER: SEQUENTIAL
 always @(posedge SC_RegBACKGTYPE_CLOCK_50, posedge SC_RegBACKGTYPE_RESET_InHigh)
 begin
