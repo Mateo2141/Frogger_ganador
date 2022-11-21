@@ -10,8 +10,7 @@ module SC_STATEMACHINEGENERAL (
 	//////////// INPUTS //////////
 	SC_STATEMACHINEGENERAL_CLOCK_50,
 	SC_STATEMACHINEGENERAL_RESET_InHigh,
-	SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow,
-	SC_STATEMACHINEGENERAL_startButton_InLow
+
 
 );	
 //=======================================================
@@ -25,11 +24,11 @@ localparam
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg		SC_STATEMACHINEPOINT_clear_OutLow;
+output reg		SC_STATEMACHINEGENERAL_clear_OutLow;
 output reg		
-input			SC_STATEMACHINEPOINT_CLOCK_50;
-input 			SC_STATEMACHINEPOINT_RESET_InHigh;
-input			SC_STATEMACHINEPOINT_startButton_InLow;
+input			SC_STATEMACHINEGENERAL_CLOCK_50;
+input 			SC_STATEMACHINEGENERAL_RESET_InHigh;
+input			SC_STATEMACHINEGENERAL_startButton_InLow;
 input			
 //=======================================================
 //  REG/WIRE declarations
@@ -52,9 +51,9 @@ begin
 	endcase
 end
 // STATE REGISTER : SEQUENTIAL
-always @ ( posedge SC_STATEMACHINEPOINT_CLOCK_50 , posedge SC_STATEMACHINEPOINT_RESET_InHigh)
+always @ ( posedge SC_STATEMACHINEGENERAL_CLOCK_50 , posedge SC_STATEMACHINEGENERAL_RESET_InHigh)
 begin
-	if (SC_STATEMACHINEPOINT_RESET_InHigh == 1'b1)
+	if (SC_STATEMACHINEGENERAL_RESET_InHigh == 1'b1)
 		STATE_Register <= STATE_RESET_0;
 	else
 		STATE_Register <= STATE_Signal;
@@ -71,20 +70,16 @@ begin
 //=========================================================
 	STATE_RESET_0 :	
 		begin
-			SC_STATEMACHINEPOINT_clear_OutLow = 1'b0;
-			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b0;
+			
 		end
 //=========================================================
 // STATE_START
 //=========================================================
 	STATE_START_0 :	
 		begin
-			SC_STATEMACHINEPOINT_clear_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b1;
+			
 		end
 
 		
@@ -95,10 +90,8 @@ begin
 //=========================================================
 	default :
 		begin
-			SC_STATEMACHINEPOINT_clear_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load0_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_load1_OutLow = 1'b1;
-			SC_STATEMACHINEPOINT_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b1;
+			
 		end
 	endcase
 end
