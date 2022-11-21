@@ -49,7 +49,7 @@ module BB_SYSTEM (
  parameter DATAWIDTH_BUS = 8;
  parameter PRESCALER_DATAWIDTH = 23;
  parameter DISPLAY_DATAWIDTH = 12;
- parameter LEVELS_DATAWIDTH = 4; 
+ parameter LEVELS_DATAWIDTH = 5; 
 
 //=======================================================
 //  Nivel 1
