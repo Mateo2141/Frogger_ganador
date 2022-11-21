@@ -86,9 +86,9 @@ begin
 		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_1_INITREGBACKG;
 	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
 		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_2_INITREGBACKG;
-	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
+	else if (SC_RegBACKGTYPE_transition_selector == 2'b10)
 		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_3_INITREGBACKG;
-	else if (SC_RegBACKGTYPE_transition_selector == 2'b01)
+	else if (SC_RegBACKGTYPE_transition_selector == 2'b11)
 		RegBACKGTYPE_Nivel == DATA_FIXED_nivel_4_INITREGBACKG;
 
 //STATE REGISTER: SEQUENTIAL
