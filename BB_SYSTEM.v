@@ -50,17 +50,55 @@ module BB_SYSTEM (
  parameter PRESCALER_DATAWIDTH = 23;
  parameter DISPLAY_DATAWIDTH = 12;
  
-  // Pantalla START
- parameter DATA_FIXED_STARTREGBACKG_7 = 8'b01100110;
- parameter DATA_FIXED_STARTREGBACKG_6 = 8'b10011001;
- parameter DATA_FIXED_STARTREGBACKG_5 = 8'b10011001;
- parameter DATA_FIXED_STARTREGBACKG_4 = 8'b01100110;
- parameter DATA_FIXED_STARTREGBACKG_3 = 8'b10000001;
- parameter DATA_FIXED_STARTREGBACKG_2 = 8'b10100101;
- parameter DATA_FIXED_STARTREGBACKG_1 = 8'b00011000;
- parameter DATA_FIXED_STARTREGBACKG_0 = 8'b01111110;
+
+//=======================================================
+//  Nivel 1
+//======================================================= 
+ parameter DATA_FIXED_INITREGBACKG_7_n1 = 8'b11011011;
+ parameter DATA_FIXED_INITREGBACKG_6_n1 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_5_n1 = 8'b10001000;
+ parameter DATA_FIXED_INITREGBACKG_4_n1 = 8'b00100100;
+ parameter DATA_FIXED_INITREGPOINT_3_n1 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_2_n1 = 8'b11001100;
+ parameter DATA_FIXED_INITREGBACKG_1_n1 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_0_n1 = 8'b00000000;
  
- // PANTALLA INICIAL
+//=======================================================
+//  Nivel 2
+//======================================================= 
+ parameter DATA_FIXED_INITREGBACKG_7_n2 = 8'b10011001;
+ parameter DATA_FIXED_INITREGBACKG_6_n2 = 8'b01000100;
+ parameter DATA_FIXED_INITREGBACKG_5_n2 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_4_n2 = 8'b10000010;
+ parameter DATA_FIXED_INITREGBACKG_3_n2 = 8'b00010000;
+ parameter DATA_FIXED_INITREGBACKG_2_n2 = 8'b11100110;
+ parameter DATA_FIXED_INITREGBACKG_1_n2 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_0_n2 = 8'b00000000;
+//=======================================================
+//  Nivel 3
+//======================================================= 
+ parameter DATA_FIXED_INITREGBACKG_7_n3 = 8'b01011001;
+ parameter DATA_FIXED_INITREGBACKG_6_n3 = 8'b10110010;
+ parameter DATA_FIXED_INITREGBACKG_5_n3 = 8'b10000001;
+ parameter DATA_FIXED_INITREGBACKG_4_n3 = 8'b01100101;
+ parameter DATA_FIXED_INITREGBACKG_3_n3 = 8'b00000000;
+ parameter DATA_FIXED_INITREGBACKG_2_n3 = 8'b11001100;
+ parameter DATA_FIXED_INITREGBACKG_1_n3 = 8'b00100000;
+ parameter DATA_FIXED_INITREGBACKG_0_n3 = 8'b00000000;
+//=======================================================
+//  Nivel 4
+//======================================================= 
+ parameter DATA_FIXED_INITREGBACKG_7_n4 = 8'b10011011;
+ parameter DATA_FIXED_INITREGBACKG_6_n4 = 8'b01110001;
+ parameter DATA_FIXED_INITREGBACKG_5_n4 = 8'b00001100;
+ parameter DATA_FIXED_INITREGBACKG_4_n4 = 8'b01100100;
+ parameter DATA_FIXED_INITREGBACKG_3_n4 = 8'b00000101;
+ parameter DATA_FIXED_INITREGBACKG_2_n4 = 8'b11001100;
+ parameter DATA_FIXED_INITREGBACKG_1_n4 = 8'b00000010;
+ parameter DATA_FIXED_INITREGBACKG_0_n4 = 8'b00000000;
+//=======================================================
+//  Rana
+//======================================================= 
  parameter DATA_FIXED_INITREGPOINT_7 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_6 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_5 = 8'b00000000;
@@ -70,14 +108,6 @@ module BB_SYSTEM (
  parameter DATA_FIXED_INITREGPOINT_1 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_0 = 8'b00010000;
  
- parameter DATA_FIXED_INITREGBACKG_7 = 8'b11100111;
- parameter DATA_FIXED_INITREGBACKG_6 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_5 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_4 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_3 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_2 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_1 = 8'b00000000;
- parameter DATA_FIXED_INITREGBACKG_0 = 8'b00000000;
  
  // Pantalla Perdida
  parameter DATA_FIXED_LOSEREGBACKG_7 = 8'b10011001;
