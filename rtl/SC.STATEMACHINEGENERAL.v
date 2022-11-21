@@ -6,14 +6,12 @@
 //=======================================================
 module SC_STATEMACHINEGENERAL (
 	//////////// OUTPUTS //////////
-
+	SC_STATEMACHINEGENERAL_contador_niveles_OutLow,
 	//////////// INPUTS //////////
 	SC_STATEMACHINEGENERAL_CLOCK_50,
 	SC_STATEMACHINEGENERAL_RESET_InHigh,
-	SC_STATEMACHINEGENERAL_COPARATOR_LEVELS,
-	A
-
-
+	SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS,
+	
 );	
 //=======================================================
 //  PARAMETER declarations
@@ -26,11 +24,10 @@ localparam
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg		SC_STATEMACHINEGENERAL_clear_OutLow;
-output reg		
+output reg		SC_STATEMACHINEGENERAL_contador_niveles_OutLow;	
 input			SC_STATEMACHINEGENERAL_CLOCK_50;
 input 			SC_STATEMACHINEGENERAL_RESET_InHigh;
-input			SC_STATEMACHINEGENERAL_startButton_InLow;
+input			SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS;
 input			
 //=======================================================
 //  REG/WIRE declarations
