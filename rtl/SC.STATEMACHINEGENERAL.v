@@ -58,8 +58,8 @@ begin
 						else
 						STATE_Signal = STATE_CONTINUA;
 		STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
-							else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
-							else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
+							else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
+							else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
 
 		default : 	STATE_Signal = STATE_START_0;
 	endcase
