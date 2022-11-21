@@ -29,10 +29,14 @@ localparam
 //  PORT declarations
 //=======================================================
 output reg		SC_STATEMACHINEGENERAL_contador_niveles_OutLow;	
+output reg 		SC_STATEMACHINEGENERAL_contador_vidas_OutLow;
 input			SC_STATEMACHINEGENERAL_CLOCK_50;
 input 			SC_STATEMACHINEGENERAL_RESET_InHigh;
+input 			SC_STATEMACHINEGENERAL_COMPARATOR_LIVES;
 input			SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS;
-input			
+input			SC_STATEMACHINEGENERAL_startButton_InLow;
+input 			SC_STATEMACHINEGENERAL_Losing_InLow;
+input 			SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -47,29 +51,18 @@ always @(*)
 begin
 	case (STATE_Register)
 		STATE_RESET_0: STATE_Signal = STATE_START_0;
-		STATE_START_0: STATE_Signal =
-		
-		
-		
+		STATE_START_0: STATE_Signal = STATE_CHECK;
+		STATE_CHECK_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LIVES == 1'b0) STATE_Signal = STATE_CONTINUA_1
+					else
+						STATE_Signal= STATE_PIERDE
+		STATE_CONTINUA_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS == 1'b'0)STATE_Signal = STATE_GANO
+						else
+						STATE_Signal = STATE_CONTINUA
+		if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
 		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
-		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
-//=========================================================
-// STATE_LOAD_LAST_REGISTER
-//=========================================================
-	STATE_LOAD_LAST_REGISTER :	
-		begin
-			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
-			SC_STATEMACHINEBACKG_load_OutLow = 1'b1;
-			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11;  
-			SC_STATEMACHINEBACKG_upcount_out = 1'b0;
-			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b0;
-		end
-						
+		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0
 
-else if (SC_STATEMACHINEPOINT_Losing_InLow  == 1'b0 | SC_STATEMACHINEPOINT_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_RESET_0;
-
-
-		default : 		STATE_Signal = STATE_START_0;
+		default : 	STATE_Signal = STATE_START_0;
 	endcase
 end
 // STATE REGISTER : SEQUENTIAL

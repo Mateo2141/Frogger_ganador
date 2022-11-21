@@ -24,7 +24,7 @@ input 	[COUNTER_LEVELS_DATAWIDTH-1:0] CC_COMPARATOR_LEVELS_señal_InLow;
 //=======================================================
 always @(CC_COMPARATOR_LEVELS_señal_InLow)
 begin
-	if( CC_COMPARATOR_LEVELS_señal_InLow == 2'b101)
+	if( CC_COMPARATOR_LEVELS_señal_InLow == 3'b101)
 		CC_COMPARATOR_LEVELS_señal_OutLow = 1'b0;
 	else
 		CC_COMPARATOR_LEVELS_señal_OutLow = 1'b1;

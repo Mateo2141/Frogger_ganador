@@ -24,7 +24,7 @@ input 	[LIVES_COUNTER_DATAWIDTH-1:0] CC_COMPARATOR_LIVES_señal_InLow;
 //=======================================================
 always @(CC_COMPARATOR_LIVES_señal_InLow)
 begin
-	if( CC_COMPARATOR_LIVES_señal_InLow == 2'b101)
+	if( CC_COMPARATOR_LIVES_señal_InLow >= 2'b01)
 		CC_COMPARATOR_LIVES_señal_OutLow = 1'b0;
 	else
 		CC_COMPARATOR_LIVES_señal_OutLow = 1'b1;
