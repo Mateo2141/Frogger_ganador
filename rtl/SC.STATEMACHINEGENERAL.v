@@ -15,7 +15,7 @@ module SC_STATEMACHINEGENERAL (
 	SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS,
 	SC_STATEMACHINEGENERAL_startButton_InLow,
 	SC_STATEMACHINEGENERAL_Losing_InLow,
-	SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow,	
+	SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow	
 );	
 //=======================================================
 //  PARAMETER declarations

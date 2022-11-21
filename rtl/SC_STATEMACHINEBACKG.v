@@ -30,7 +30,7 @@ module SC_STATEMACHINEBACKG (
 	SC_STATEMACHINEBACKG_CLOCK_50,
 	SC_STATEMACHINEBACKG_RESET_InHigh,
 	SC_STATEMACHINEBACKG_startButton_InLow,
-	SC_STATEMACHINEBACKG_T0_InLow,
+	SC_STATEMACHINEBACKG_T0_InLow
 );	
 //=======================================================
 //  PARAMETER declarations
