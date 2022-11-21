@@ -1,5 +1,5 @@
 Assembler report for BB_SYSTEM
-Mon Nov 21 13:25:32 2022
+Mon Nov 21 14:48:51 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Nov 21 13:25:32 2022 ;
+; Assembler Status      ; Successful - Mon Nov 21 14:48:51 2022 ;
 ; Revision Name         ; BB_SYSTEM                             ;
 ; Top-level Entity Name ; BB_SYSTEM                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+---------------------------------------------------------------+
 ; Option         ; Setting                                                       ;
 +----------------+---------------------------------------------------------------+
-; JTAG usercode  ; 0x00190E32                                                    ;
-; Checksum       ; 0x00190E32                                                    ;
+; JTAG usercode  ; 0x00196CE5                                                    ;
+; Checksum       ; 0x00196CE5                                                    ;
 +----------------+---------------------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 21 13:25:30 2022
+    Info: Processing started: Mon Nov 21 14:48:50 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4689 megabytes
-    Info: Processing ended: Mon Nov 21 13:25:32 2022
+    Info: Peak virtual memory: 4685 megabytes
+    Info: Processing ended: Mon Nov 21 14:48:52 2022
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

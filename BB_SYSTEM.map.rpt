@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Mon Nov 21 13:25:14 2022
+Mon Nov 21 14:48:39 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -103,15 +103,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 21 13:25:14 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 21 14:48:39 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 629                                         ;
-;     Total combinational functions  ; 626                                         ;
-;     Dedicated logic registers      ; 262                                         ;
-; Total registers                    ; 262                                         ;
+; Total logic elements               ; 669                                         ;
+;     Total combinational functions  ; 665                                         ;
+;     Dedicated logic registers      ; 286                                         ;
+; Total registers                    ; 286                                         ;
 ; Total pins                         ; 30                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -262,20 +262,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 629                      ;
+; Estimated Total logic elements              ; 669                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 626                      ;
+; Total combinational functions               ; 665                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 346                      ;
-;     -- 3 input functions                    ; 111                      ;
-;     -- <=2 input functions                  ; 169                      ;
+;     -- 4 input functions                    ; 387                      ;
+;     -- 3 input functions                    ; 116                      ;
+;     -- <=2 input functions                  ; 162                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 521                      ;
+;     -- normal mode                          ; 560                      ;
 ;     -- arithmetic mode                      ; 105                      ;
 ;                                             ;                          ;
-; Total registers                             ; 262                      ;
-;     -- Dedicated logic registers            ; 262                      ;
+; Total registers                             ; 286                      ;
+;     -- Dedicated logic registers            ; 286                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 30                       ;
@@ -283,9 +283,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 262                      ;
-; Total fan-out                               ; 3053                     ;
-; Average fan-out                             ; 3.22                     ;
+; Maximum fan-out                             ; 286                      ;
+; Total fan-out                               ; 3315                     ;
+; Average fan-out                             ; 3.28                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -294,10 +294,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name               ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |BB_SYSTEM                                                  ; 626 (30)            ; 262 (0)                   ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                 ; work         ;
+; |BB_SYSTEM                                                  ; 665 (32)            ; 286 (0)                   ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM                 ; work         ;
 ;    |CC_BIN2BCD1:CC_BIN2BCD1_u0|                             ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_BIN2BCD1:CC_BIN2BCD1_u0                                                      ; CC_BIN2BCD1               ; work         ;
-;    |CC_LastRegisterCOMPARATOR:CC_LastRegisterCOMPARATOR_u0| ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_LastRegisterCOMPARATOR:CC_LastRegisterCOMPARATOR_u0                          ; CC_LastRegisterCOMPARATOR ; work         ;
-;    |CC_MATRIXCOMPARATOR:CC_MATRIXCOMPARATOR_u0|             ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MATRIXCOMPARATOR:CC_MATRIXCOMPARATOR_u0                                      ; CC_MATRIXCOMPARATOR       ; work         ;
+;    |CC_LastRegisterCOMPARATOR:CC_LastRegisterCOMPARATOR_u0| ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_LastRegisterCOMPARATOR:CC_LastRegisterCOMPARATOR_u0                          ; CC_LastRegisterCOMPARATOR ; work         ;
+;    |CC_MATRIXCOMPARATOR:CC_MATRIXCOMPARATOR_u0|             ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MATRIXCOMPARATOR:CC_MATRIXCOMPARATOR_u0                                      ; CC_MATRIXCOMPARATOR       ; work         ;
 ;    |CC_SEVENSEG1:CC_SEVENSEG1_u0|                           ; 41 (41)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SEVENSEG1:CC_SEVENSEG1_u0                                                    ; CC_SEVENSEG1              ; work         ;
 ;    |CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0|               ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0                                        ; CC_SPEEDCOMPARATOR        ; work         ;
 ;    |SC_COUNTER_LEVELS:SC_COUNTER_LEVELS_u0|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_COUNTER_LEVELS:SC_COUNTER_LEVELS_u0                                          ; SC_COUNTER_LEVELS         ; work         ;
@@ -307,23 +307,26 @@ https://fpgasoftware.intel.com/eula.
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u3|                           ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u3                                                    ; SC_DEBOUNCE1              ; work         ;
 ;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u4|                           ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u4                                                    ; SC_DEBOUNCE1              ; work         ;
 ;    |SC_LIVES_COUNTER:SC_LIVES_COUNTER_u0|                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_LIVES_COUNTER:SC_LIVES_COUNTER_u0                                            ; SC_LIVES_COUNTER          ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                     ; 2 (2)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE           ; work         ;
-;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                     ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE           ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                     ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE           ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|                     ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4                                              ; SC_RegBACKGTYPE           ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|                     ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5                                              ; SC_RegBACKGTYPE           ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|                     ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6                                              ; SC_RegBACKGTYPE           ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1                                              ; SC_RegPOINTTYPE           ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                     ; 27 (27)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE           ; work         ;
-;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE           ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE           ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                     ; 27 (27)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4                                              ; SC_RegPOINTTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5                                              ; SC_RegPOINTTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6                                              ; SC_RegPOINTTYPE           ; work         ;
 ;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|                     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7                                              ; SC_RegPOINTTYPE           ; work         ;
-;    |SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|           ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0                                    ; SC_STATEMACHINEBACKG      ; work         ;
-;    |SC_STATEMACHINEGENERAL:SC_STATEMACHINEGENERAL_u0|       ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEGENERAL:SC_STATEMACHINEGENERAL_u0                                ; SC_STATEMACHINEGENERAL    ; work         ;
+;    |SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|           ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0                                    ; SC_STATEMACHINEBACKG      ; work         ;
+;    |SC_STATEMACHINEGENERAL:SC_STATEMACHINEGENERAL_u0|       ; 6 (6)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEGENERAL:SC_STATEMACHINEGENERAL_u0                                ; SC_STATEMACHINEGENERAL    ; work         ;
 ;    |SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|           ; 15 (15)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0                                    ; SC_STATEMACHINEPOINT      ; work         ;
 ;    |SC_upCOUNTER:SC_upCOUNTER_u0|                           ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upCOUNTER:SC_upCOUNTER_u0                                                    ; SC_upCOUNTER              ; work         ;
 ;    |SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|                 ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0                                          ; SC_upSPEEDCOUNTER         ; work         ;
-;    |matrix_ctrl:matrix_ctrl_unit_0|                         ; 112 (35)            ; 52 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl               ; work         ;
-;       |shift_reg_start_done:shift_reg_start_done_unit_0|    ; 77 (77)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done      ; work         ;
+;    |matrix_ctrl:matrix_ctrl_unit_0|                         ; 114 (35)            ; 52 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl               ; work         ;
+;       |shift_reg_start_done:shift_reg_start_done_unit_0|    ; 79 (79)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done      ; work         ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -421,28 +424,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 ; Register name                                                                 ; Reason for Removal                                                                    ;
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[1..7]                ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[1..7]                ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[1..3,5..7]           ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[3,4,6]               ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[1,2,4..6]            ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[1,3..5,7]            ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
 ; matrix_ctrl:matrix_ctrl_unit_0|Trig_Register1                                 ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0                           ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[6,7]                 ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[2]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]                   ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[4]                   ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[1,7]                 ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[2,6]                 ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[1]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[2,5]                 ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]               ;
-; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[3,7]                 ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[7]                   ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[1,3,4]               ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[6]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[2]                   ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[5]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[1..7]                ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[0..7]                ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[0..7]                ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]               ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0]                   ; Stuck at GND due to stuck port data_in                                                ;
 ; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~3                               ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[0]                                     ;
 ; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~2                               ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[1]                                     ;
 ; SC_LIVES_COUNTER:SC_LIVES_COUNTER_u0|SC_LIVES_COUNTER_Register[1,2]           ; Lost fanout                                                                           ;
@@ -475,7 +464,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST_WAIT2FINISH             ; Stuck at GND due to stuck port data_in                                                ;
 ; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~1                               ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[2]                                     ;
 ; CC_SEVENSEG1:CC_SEVENSEG1_u0|count[3]                                         ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0                           ;
-; Total Number of Removed Registers = 90                                        ;                                                                                       ;
+; Total Number of Removed Registers = 66                                        ;                                                                                       ;
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 
@@ -498,12 +487,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 262   ;
+; Total registers                              ; 286   ;
 ; Number of registers using Synchronous Clear  ; 72    ;
 ; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 192   ;
+; Number of registers using Asynchronous Clear ; 216   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Clock Enable       ; 178   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -513,16 +502,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[10] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[5]                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[12] ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[13]   ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[11]   ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[7]                                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[1]                                 ;
-; 6:1                ; 64 bits   ; 256 LEs       ; 192 LEs              ; 64 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[5]                                 ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[4]    ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[9]    ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|RegBACKGTYPE_Register[2]                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|RegBACKGTYPE_Register[3]                                 ;
+; 6:1                ; 64 bits   ; 256 LEs       ; 192 LEs              ; 64 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[5]                                 ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[7]    ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|data_max[3]                                                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|CC_SEVENSEG1:CC_SEVENSEG1_u0|Mux1                                                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|CC_SEVENSEG1:CC_SEVENSEG1_u0|Mux0                                                           ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------+
 
@@ -539,36 +528,36 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; LEVELS_DATAWIDTH             ; 5        ; Signed Integer                  ;
 ; LIVES_DATAWIDTH              ; 3        ; Signed Integer                  ;
 ; DATA_FIXED_INITREGBACKG_7_n1 ; 11011011 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_6_n1 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_5_n1 ; 10001000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_4_n1 ; 00100100 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_6_n1 ; 11000011 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_5_n1 ; 00000010 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_4_n1 ; 00110000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_3_n1 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_2_n1 ; 11001100 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_1_n1 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_0_n1 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_7_n2 ; 10011001 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_6_n2 ; 01000100 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_5_n2 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_4_n2 ; 10000010 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_3_n2 ; 00010000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_2_n2 ; 11100110 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_7_n2 ; 01111110 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_6_n2 ; 11000000 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_5_n2 ; 00001110 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_4_n2 ; 00100010 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_3_n2 ; 00000000 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_2_n2 ; 00111100 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_1_n2 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_0_n2 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_7_n3 ; 01011001 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_6_n3 ; 10110010 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_5_n3 ; 10000001 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_4_n3 ; 01100101 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_3_n3 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_2_n3 ; 11001100 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_1_n3 ; 00100000 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_7_n3 ; 11011011 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_6_n3 ; 11001100 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_5_n3 ; 00001110 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_4_n3 ; 00000000 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_3_n3 ; 01000010 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_2_n3 ; 00111100 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_1_n3 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_0_n3 ; 00000000 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_7_n4 ; 10011011 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_6_n4 ; 01110001 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_5_n4 ; 00001100 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_4_n4 ; 01100100 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_3_n4 ; 00000101 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_2_n4 ; 11001100 ; Unsigned Binary                 ;
-; DATA_FIXED_INITREGBACKG_1_n4 ; 00000010 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_7_n4 ; 11011101 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_6_n4 ; 11001100 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_5_n4 ; 10110010 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_4_n4 ; 10011111 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_3_n4 ; 10000000 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_2_n4 ; 01110011 ; Unsigned Binary                 ;
+; DATA_FIXED_INITREGBACKG_1_n4 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGBACKG_0_n4 ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGPOINT_7    ; 00000000 ; Unsigned Binary                 ;
 ; DATA_FIXED_INITREGPOINT_6    ; 00000000 ; Unsigned Binary                 ;
@@ -751,9 +740,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
 ; DATA_FIXED_nivel_1_INITREGBACKG ; 11011011 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 10011001 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 01011001 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 10011011 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 01111110 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 11011011 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 11011101 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -764,10 +753,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name                  ; Value    ; Type                               ;
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
-; DATA_FIXED_nivel_1_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 01000100 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 10110010 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 01110001 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_1_INITREGBACKG ; 11000011 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 11000000 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 11001100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 11001100 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -778,10 +767,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name                  ; Value    ; Type                               ;
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
-; DATA_FIXED_nivel_1_INITREGBACKG ; 10001000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 10000001 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 00001100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_1_INITREGBACKG ; 00000010 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 00001110 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 00001110 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 10110010 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -792,10 +781,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name                  ; Value    ; Type                               ;
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
-; DATA_FIXED_nivel_1_INITREGBACKG ; 00100100 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 10000010 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 01100101 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 01100100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_1_INITREGBACKG ; 00110000 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 00100010 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 10011111 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -807,9 +796,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
 ; DATA_FIXED_nivel_1_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 00010000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 00000101 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 01000010 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 10000000 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -821,9 +810,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------+----------+------------------------------------+
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
 ; DATA_FIXED_nivel_1_INITREGBACKG ; 11001100 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_2_INITREGBACKG ; 11100110 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 11001100 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 11001100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_2_INITREGBACKG ; 00111100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 00111100 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 01110011 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -836,8 +825,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; RegBACKGTYPE_DATAWIDTH          ; 8        ; Signed Integer                     ;
 ; DATA_FIXED_nivel_1_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
 ; DATA_FIXED_nivel_2_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_3_INITREGBACKG ; 00100000 ; Unsigned Binary                    ;
-; DATA_FIXED_nivel_4_INITREGBACKG ; 00000010 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_3_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_nivel_4_INITREGBACKG ; 00000000 ; Unsigned Binary                    ;
 +---------------------------------+----------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1068,7 +1057,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1079,7 +1067,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1090,7 +1077,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1101,7 +1087,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1112,7 +1097,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1123,7 +1107,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1134,19 +1117,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_load2_InBUS ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
 ; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"                                                                                                                                ;
-+-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                        ; Type  ; Severity ; Details                                                                                                                                      ;
-+-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; SC_RegBACKGTYPE_data_InBUS  ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; SC_RegBACKGTYPE_data2_InBUS ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"                                                                                                                                      ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                              ; Type  ; Severity ; Details                                                                                                                                      ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_shiftselection_In ; Input ; Info     ; Explicitly unconnected                                                                                                                       ;
+; SC_RegBACKGTYPE_data_InBUS        ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
+; SC_RegBACKGTYPE_data2_InBUS       ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1155,26 +1138,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 262                         ;
-;     CLR               ; 41                          ;
-;     ENA CLR           ; 124                         ;
+; cycloneiii_ff         ; 286                         ;
+;     CLR               ; 38                          ;
+;     ENA CLR           ; 151                         ;
 ;     ENA CLR SCLR      ; 17                          ;
 ;     ENA CLR SLD       ; 10                          ;
 ;     SCLR              ; 55                          ;
 ;     plain             ; 15                          ;
-; cycloneiii_lcell_comb ; 630                         ;
+; cycloneiii_lcell_comb ; 669                         ;
 ;     arith             ; 105                         ;
 ;         2 data inputs ; 102                         ;
 ;         3 data inputs ; 3                           ;
-;     normal            ; 525                         ;
+;     normal            ; 564                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 55                          ;
-;         3 data inputs ; 108                         ;
-;         4 data inputs ; 346                         ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 113                         ;
+;         4 data inputs ; 387                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 3.45                        ;
+; Average LUT depth     ; 3.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1193,7 +1176,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 21 13:24:58 2022
+    Info: Processing started: Mon Nov 21 14:48:28 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinebackg.v
@@ -1318,16 +1301,6 @@ Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[4]" at SC_RegBACKGTYPE.v(75
 Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[5]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
 Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[6]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
 Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[7]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 551
-Warning (10240): Verilog HDL Always Construct warning at SC_RegBACKGTYPE.v(73): inferring latch(es) for variable "RegBACKGTYPE_Nivel", which holds its previous value in one or more paths through the always construct File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 73
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[0]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[1]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[2]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[3]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[4]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[5]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[6]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
-Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[7]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
 Info (12128): Elaborating entity "SC_STATEMACHINEBACKG" for hierarchy "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 564
 Warning (10034): Output port "SC_STATEMACHINEBACKG_upcount2_out" at SC_STATEMACHINEBACKG.v(53) has no driver File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_STATEMACHINEBACKG.v Line: 53
 Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 573
@@ -1370,15 +1343,15 @@ Info (17049): 26 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 660 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 700 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 630 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Mon Nov 21 13:25:14 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 670 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4768 megabytes
+    Info: Processing ended: Mon Nov 21 14:48:39 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+
