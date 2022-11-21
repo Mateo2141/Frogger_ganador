@@ -7,11 +7,14 @@
 module SC_STATEMACHINEGENERAL (
 	//////////// OUTPUTS //////////
 	SC_STATEMACHINEGENERAL_contador_niveles_OutLow,
+	SC_STATEMACHINEGENERAL_contador_vidas_OutLow,
 	//////////// INPUTS //////////
 	SC_STATEMACHINEGENERAL_CLOCK_50,
 	SC_STATEMACHINEGENERAL_RESET_InHigh,
 	SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS,
-	
+	SC_STATEMACHINEGENERAL_startButton_InLow,
+	SC_STATEMACHINEGENERAL_Losing_InLow,
+	SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow,	
 );	
 //=======================================================
 //  PARAMETER declarations

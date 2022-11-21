@@ -13,7 +13,7 @@ module SC_COUNTER_LEVELS #(parameter COUNTER_LEVELS_DATAWIDTH =8)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-output		[upCOUNTER_DATAWIDTH-1:0]	SC_COUNTER_LEVELS_señal_OutLow;
+output		[COUNTER_LEVELS_DATAWIDTH-1:0]	SC_COUNTER_LEVELS_señal_OutLow;
 input		SC_COUNTER_LEVELS_CLOCK_50;
 input		SC_COUNTER_LEVELS_RESET_InHigh;
 input		SC_COUNTER_LEVELS_señal_InLow;	
@@ -21,8 +21,8 @@ input		SC_COUNTER_LEVELS_señal_InLow;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [upCOUNTER_DATAWIDTH-1:0]  COUNTER_LEVELS_Register;
-reg [upCOUNTER_DATAWIDTH-1:0]  COUNTER_LEVELS_Signal;
+reg [COUNTER_LEVELS_DATAWIDTH-1:0]  COUNTER_LEVELS_Register;
+reg [COUNTER_LEVELS_DATAWIDTH-1:0]  COUNTER_LEVELS_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
