@@ -23,6 +23,11 @@ module SC_STATEMACHINEGENERAL(
 // states declaration
 localparam STATE_RESET_0									= 0;
 localparam STATE_START_0									= 1;
+localparam STATE_CHECK										= 2;
+localparam STATE_PIERDE										= 3;
+localparam STATE_GANO										= 4;
+localparam STATE_MENOS_UNA_VIDA								= 5;
+localparam STATE_SUME_UNA_VIDA								= 6;
 
 //=======================================================
 //  PORT declarations
@@ -51,16 +56,16 @@ begin
 	case (STATE_Register)
 		STATE_RESET_0: STATE_Signal = STATE_START_0;
 		STATE_START_0: STATE_Signal = STATE_CHECK;
-		STATE_CHECK_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LIVES == 1'b0) STATE_Signal = STATE_CONTINUA_1;
-					else
-						STATE_Signal= STATE_PIERDE;
-		STATE_CONTINUA_1: if (SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS == 1'b0)STATE_Signal = STATE_GANO;
-						else
-						STATE_Signal = STATE_CONTINUA;
-		STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
-							else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
-							else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
-
+		STATE_CHECK: if (SC_STATEMACHINEGENERAL_COMPARATOR_LIVES == 1'b0) STATE_Signal = STATE_PIERDE;
+						else if (SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS == 3'b101)STATE_Signal = STATE_GANO;
+						else if (SC_STATEMACHINEGENERAL_Losing_InLow == 1'b0)	STATE_Signal = STATE_MENOS_UNA_VIDA;
+						else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b00) STATE_Signal = STATE_SUME_UNA_VIDA;
+						else 
+							STATE_Signal = STATE_START_0
+///STATE_CONTINUA: if (SC_STATEMACHINEGENERAL_Losing_InLow  == 1'b0 | SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow != 2'b11) STATE_Signal = STATE_PIERDE;				
+///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
+///					else if (SC_STATEMACHINEGENERAL_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
+///
 		default : 	STATE_Signal = STATE_START_0;
 	endcase
 end
@@ -78,25 +83,65 @@ end
 // OUTPUT LOGIC : COMBINATIONAL
 always @ (*)
 begin
-	case (STATE_Register)
+	case (STATE_Register)	
 //=========================================================
-// STATE_RESET
+// STATE_RESET_0
 //=========================================================
 	STATE_RESET_0 :	
 		begin
-			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b0;
-			
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
 		end
 //=========================================================
-// STATE_START
+// STATE_START_0
 //=========================================================
 	STATE_START_0 :	
 		begin
-			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b1;
-			
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
 		end
-
+//=========================================================
+// STATE_CHECK
+//=========================================================
+	STATE_CHECK :	
+		begin
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
+		end
+//=========================================================
+// STATE_PIERDE
+//=========================================================
+	STATE_PIERDE :	
+		begin
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
+		end
+//=========================================================
+// STATE_GANO
+//=========================================================
+	STATE_GANO :	
+		begin
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
+		end
 		
+//=========================================================
+// STATE_MENOS_UNA_VIDA
+//=========================================================
+	STATE_MENOS_UNA_VIDA :	
+		begin
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
+		end
+		
+//=========================================================
+// STATE_SUME_UNA_VIDA
+//=========================================================
+	STATE_SUME_UNA_VIDA :	
+		begin
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
+		end
 		
 
 //=========================================================
@@ -104,8 +149,8 @@ begin
 //=========================================================
 	default :
 		begin
-			SC_STATEMACHINEGENERAL_clear_OutLow = 1'b1;
-			
+		SC_STATEMACHINEGENERAL_contador_niveles_OutLow = 1'b1;
+		SC_STATEMACHINEGENERAL_contador_vidas_OutLow= 1'b1;
 		end
 	endcase
 end
