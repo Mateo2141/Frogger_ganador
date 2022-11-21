@@ -45,6 +45,24 @@ begin
 		STATE_RESET_0: STATE_Signal = STATE_START_0;
 		STATE_START_0: STATE_Signal =
 		
+		
+		
+		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b10) STATE_Signal = STATE_LOAD_LAST_REGISTER;
+		else if (SC_STATEMACHINEBACKG_LastRegisterComparator_InLow == 2'b11) STATE_Signal = STATE_RESET_0;
+//=========================================================
+// STATE_LOAD_LAST_REGISTER
+//=========================================================
+	STATE_LOAD_LAST_REGISTER :	
+		begin
+			SC_STATEMACHINEBACKG_clear_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_load_OutLow = 1'b1;
+			SC_STATEMACHINEBACKG_shiftselection_Out  = 2'b11;  
+			SC_STATEMACHINEBACKG_upcount_out = 1'b0;
+			SC_STATEMACHINEBACKG_loadLastRegister_OutLow = 1'b0;
+		end
+						
+
+
 
 		default : 		STATE_Signal = STATE_START_0;
 	endcase
