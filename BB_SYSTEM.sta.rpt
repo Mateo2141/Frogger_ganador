@@ -1,5 +1,5 @@
 Timing Analyzer report for BB_SYSTEM
-Mon Nov 21 13:21:37 2022
+Mon Nov 21 13:25:38 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -100,14 +100,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.2%      ;
-;     Processor 3            ;   2.9%      ;
-;     Processor 4            ;   1.8%      ;
+;     Processor 2            ;   3.6%      ;
+;     Processor 3            ;   2.3%      ;
+;     Processor 4            ;   1.3%      ;
 +----------------------------+-------------+
 
 
@@ -116,7 +116,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; BB_SYSTEM.sdc ; OK     ; Mon Nov 21 13:21:35 2022 ;
+; BB_SYSTEM.sdc ; OK     ; Mon Nov 21 13:25:37 2022 ;
 +---------------+--------+--------------------------+
 
 
@@ -286,8 +286,8 @@ No paths to report.
 ; 15.436 ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[5]                              ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.080     ; 4.479      ;
 ; 15.436 ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[2]                              ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.062     ; 4.497      ;
 ; 15.436 ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[0]                              ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.062     ; 4.497      ;
-; 15.437 ; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[11] ; matrix_ctrl:matrix_ctrl_unit_0|cur_col_reg[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.060     ; 4.498      ;
 ; 15.437 ; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[3]                                 ; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[2] ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.073     ; 4.485      ;
+; 15.437 ; matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[11] ; matrix_ctrl:matrix_ctrl_unit_0|cur_col_reg[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.060     ; 4.498      ;
 ; 15.442 ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register.STATE_UP_0                      ; SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[2]                              ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 20.000       ; -0.078     ; 4.475      ;
 +--------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
 
@@ -1250,7 +1250,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 21 13:21:34 2022
+    Info: Processing started: Mon Nov 21 13:25:35 2022
 Info: Command: quartus_sta BB_SYSTEM -c BB_SYSTEM
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -1319,8 +1319,8 @@ Info (332146): Worst-case minimum pulse width slack is 9.271
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Mon Nov 21 13:21:37 2022
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Mon Nov 21 13:25:38 2022
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

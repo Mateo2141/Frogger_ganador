@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Mon Nov 21 13:21:13 2022
+Mon Nov 21 13:25:14 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -65,19 +65,18 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  57. Port Connectivity Checks: "CC_COMPARATOR_LEVELS:CC_COMPARATOR_LEVELS_u0"
  58. Port Connectivity Checks: "SC_COUNTER_LEVELS:SC_COUNTER_LEVELS_u0"
  59. Port Connectivity Checks: "CC_LastRegisterCOMPARATOR:CC_LastRegisterCOMPARATOR_u0"
- 60. Port Connectivity Checks: "CC_DISPLAYTIMER_COMPARATOR:CC_DISPLAYTIMER_COMPARATOR_u0"
- 61. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0"
- 62. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1"
- 63. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2"
- 64. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3"
- 65. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4"
- 66. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5"
- 67. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6"
- 68. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"
- 69. Post-Synthesis Netlist Statistics for Top Partition
- 70. Elapsed Time Per Partition
- 71. Analysis & Synthesis Messages
- 72. Analysis & Synthesis Suppressed Messages
+ 60. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0"
+ 61. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1"
+ 62. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2"
+ 63. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3"
+ 64. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4"
+ 65. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5"
+ 66. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6"
+ 67. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"
+ 68. Post-Synthesis Netlist Statistics for Top Partition
+ 69. Elapsed Time Per Partition
+ 70. Analysis & Synthesis Messages
+ 71. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -104,7 +103,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 21 13:21:13 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 21 13:25:14 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -1063,15 +1062,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CC_DISPLAYTIMER_COMPARATOR:CC_DISPLAYTIMER_COMPARATOR_u0"                                                           ;
-+--------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                                 ; Type   ; Severity ; Details                                                                             ;
-+--------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; CC_DISPLAYTIMER_COMPARATOR_T0_OutLow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0"                                                                                                                                ;
 +-----------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1193,7 +1183,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1203,7 +1193,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 21 13:20:59 2022
+    Info: Processing started: Mon Nov 21 13:24:58 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinebackg.v
@@ -1339,6 +1329,7 @@ Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[5]" at SC_RegBACKGTYPE.v(75
 Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[6]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
 Info (10041): Inferred latch for "RegBACKGTYPE_Nivel[7]" at SC_RegBACKGTYPE.v(75) File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_RegBACKGTYPE.v Line: 75
 Info (12128): Elaborating entity "SC_STATEMACHINEBACKG" for hierarchy "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 564
+Warning (10034): Output port "SC_STATEMACHINEBACKG_upcount2_out" at SC_STATEMACHINEBACKG.v(53) has no driver File: C:/Users/mateo/Desktop/Frogger_ganador/rtl/SC_STATEMACHINEBACKG.v Line: 53
 Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 573
 Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 578
 Info (12128): Elaborating entity "SC_DISPLAYTIMER_COUNTER" for hierarchy "SC_DISPLAYTIMER_COUNTER:SC_DISPLAYTIMER_COUNTER_u0" File: C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.v Line: 586
@@ -1383,11 +1374,11 @@ Info (21057): Implemented 660 device resources after synthesis - the final resou
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 23 output pins
     Info (21061): Implemented 630 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 4768 megabytes
-    Info: Processing ended: Mon Nov 21 13:21:13 2022
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:09
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4767 megabytes
+    Info: Processing ended: Mon Nov 21 13:25:14 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+

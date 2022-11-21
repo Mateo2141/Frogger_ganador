@@ -1,5 +1,5 @@
 Fitter report for BB_SYSTEM
-Mon Nov 21 13:21:26 2022
+Mon Nov 21 13:25:27 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Nov 21 13:21:26 2022       ;
+; Fitter Status                      ; Successful - Mon Nov 21 13:25:27 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -160,7 +160,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.0%      ;
+;     Processor 2            ;   1.1%      ;
 ;     Processor 3            ;   0.9%      ;
 ;     Processor 4            ;   0.9%      ;
 +----------------------------+-------------+
@@ -1498,9 +1498,9 @@ Warning (169177): 7 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
 Info (144001): Generated suppressed messages file C:/Users/mateo/Desktop/Frogger_ganador/BB_SYSTEM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 5523 megabytes
-    Info: Processing ended: Mon Nov 21 13:21:26 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Mon Nov 21 13:25:27 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +----------------------------+
