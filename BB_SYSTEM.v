@@ -18,7 +18,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-
+//Se crea el modulo BB_System donde tendremos todas las conexiones 
 module BB_SYSTEM (
 //////////// OUTPUTS //////////
 	BB_SYSTEM_display_OutBUS,
@@ -53,7 +53,7 @@ module BB_SYSTEM (
  parameter DISPLAY_DATAWIDTH = 12;
  parameter LEVELS_DATAWIDTH = 5; 
  parameter LIVES_DATAWIDTH = 3;
-
+//Se crean las pantallas de los niveles que se cargaran posteriormente como parametro
 //=======================================================
 //  Nivel 1
 //======================================================= 
@@ -228,7 +228,7 @@ wire STATEMACHINEGENERAL_DisplayResultado_cwire;
 //BOTTOMSIDE COMPARATOR
 wire BOTTOMSIDECOMPARATOR_2_STATEMACHINEBACKG_bottomside_cwire;
 
-// GAME
+// GAME OR y ANDS
 wire [DATAWIDTH_BUS-1:0] regGAME_data7_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data6_wire;
 wire [DATAWIDTH_BUS-1:0] regGAME_data5_wire;
@@ -258,7 +258,7 @@ wire [DISPLAY_DATAWIDTH-1:0] BIN2BCD1_2_SEVENSEG1_data_BUS_wire;
 //=======================================================
 
 //######################################################################
-//#	INPUTS
+//#	INPUTS SC_DEBOUNCES
 //######################################################################
 SC_DEBOUNCE1 SC_DEBOUNCE1_u0 (
 // port map - connection between master ports and signals/registers   
@@ -297,7 +297,7 @@ SC_DEBOUNCE1 SC_DEBOUNCE1_u4 (
 );
 
 //######################################################################
-//#	POINT
+//#	POINT REGISTROS DEL FROGGER
 //######################################################################
 SC_RegPOINTTYPE #(.RegPOINTTYPE_DATAWIDTH(DATAWIDTH_BUS), .DATA_FIXED_INITREGPOINT(DATA_FIXED_INITREGPOINT_7)) SC_RegPOINTTYPE_u7 (
 // port map - connection between master ports and signals/registers   
@@ -395,7 +395,7 @@ SC_RegPOINTTYPE #(.RegPOINTTYPE_DATAWIDTH(DATAWIDTH_BUS), .DATA_FIXED_INITREGPOI
 	.SC_RegPOINTTYPE_data0_InBUS(RegPOINTTYPE_2_POINTMATRIX_data7_Out),
 	.SC_RegPOINTTYPE_data1_InBUS(RegPOINTTYPE_2_POINTMATRIX_data1_Out)
 );
-
+//MAQUINA DE ESTADOS PARA EL FROGGER
 SC_STATEMACHINEPOINT SC_STATEMACHINEPOINT_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_STATEMACHINEPOINT_clear_OutLow(STATEMACHINEPOINT_clear_cwire), 
@@ -413,7 +413,7 @@ SC_STATEMACHINEPOINT SC_STATEMACHINEPOINT_u0 (
 );
 
 //######################################################################
-//#	BACKGROUND
+//#	BACKGROUND REGISTROS
 //######################################################################
 SC_RegBACKGTYPE #(.RegBACKGTYPE_DATAWIDTH(DATAWIDTH_BUS), 
 				.DATA_FIXED_nivel_1_INITREGBACKG(DATA_FIXED_INITREGBACKG_7_n1),
@@ -574,6 +574,7 @@ SC_RegBACKGTYPE #(.RegBACKGTYPE_DATAWIDTH(DATAWIDTH_BUS),
 	.SC_RegBACKGTYPE_load2_InBUS(),
 	.SC_RegBACKGTYPE_DisplayResultado_InBUS(STATEMACHINEGENERAL_DisplayResultado_cwire)
 );
+//MAQUINA DE ESTADOS PARA EL FONDO DE PANTALLA
 SC_STATEMACHINEBACKG SC_STATEMACHINEBACKG_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_STATEMACHINEBACKG_clear_OutLow(STATEMACHINEBACKG_clear_cwire), 
@@ -614,7 +615,7 @@ CC_DISPLAYTIMER_COMPARATOR #(.DISPLAYTIMER_DATAWIDTH(PRESCALER_DATAWIDTH_2)) CC_
 	.CC_DISPLAYTIMER_COMPARATOR_data_InBUS(DISPLAYTIMER_data_BUS_wire)
 );
 //######################################################################
-//#	COMPARATOR END OF MATRIX (BOTTON SIDE)
+//#	COMPARATORADORES
 //######################################################################
 
 CC_MATRIXCOMPARATOR #(.MATRIXCOMPARATOR_DATAWIDTH(DATAWIDTH_BUS))CC_MATRIXCOMPARATOR_u0(
@@ -654,7 +655,9 @@ CC_COMPARATOR_LEVELS #(.COUNTER_LEVELS_DATAWIDTH(LEVELS_DATAWIDTH)) CC_COMPARATO
 	.CC_COMPARATOR_LEVELS_senal_OutLow(SC_STATEMACHINEGENERAL_COMPARATOR_LEVELS_wire),
 	.CC_COMPARATOR_LEVELS_senal_InLow(SC_COUNTER_LEVELS_wire)
 );
-
+//######################################################################
+//#	CONTADORES
+//######################################################################
 SC_LIVES_COUNTER #(.LIVES_COUNTER_DATAWIDTH(LIVES_DATAWIDTH)) SC_LIVES_COUNTER_u0 (
 
 	.SC_LIVES_COUNTER_senal_OutLow(SC_COUNTER_LIVES_wire), 
@@ -668,6 +671,7 @@ CC_COMPARATOR_LIVES #(.LIVES_COUNTER_DATAWIDTH(LIVES_DATAWIDTH)) CC_COMPARATOR_L
 	.CC_COMPARATOR_LIVES_senal_InLow(SC_COUNTER_LIVES_wire)
 );
 
+//MAQUINA DE ESTADOS GENERAL
 SC_STATEMACHINEGENERAL SC_STATEMACHINEGENERAL_u0 (
 // port map - connection between master ports and signals/registers   
 	.SC_STATEMACHINEGENERAL_contador_niveles_OutLow(SC_STATEMACHINEGENERAL_COUNTER_LEVELS_wire),
